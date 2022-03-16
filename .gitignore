@@ -1,0 +1,6 @@
+#push 안할 폴더
+abcd/
+
+#push 안할 파일
+*.psd
+*.fig
