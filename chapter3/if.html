@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문과 조건문</title>
+    <style>
+        .good {
+            color: blueviolet;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>제어문</h1>
+    <h2>01.조건문</h2>
+    <h3>1)조건문 - 단순if</h3>
+    <code>
+        <pre>
+            if(조건식) {
+                ....코드들...''
+            }
+        </pre>
+    </code>
+    <h4>단순if 적용예제1</h4>
+    <script>
+        // var num = 10;
+        // if(num<500) {
+        //     document.write(num+"은 500보다 작다", "<br>")
+        // }
+        // document.write("프로그램이 종료됩니다.", "<br>")
+    </script>
+    <h4>단순if 적용예제2</h4>
+    <!-- <p>
+        0, null, "(빈문자)", undefinde 일 시에는 항상 false
+        그 외 : 1, 10, 100,,... 항상 true
+    </p> -->
+    <script>
+        if(200) {
+            document.write("hello", "<br>")
+        }
+    </script>
+    <h4>단순if 적용예제3(62쪽)</h4>
+    <script>
+        // var walkAmount = prompt("하루동안 마니 걸었니?", "걸음 수를 입력하세요.");
+        // walkAmount = Number(walkAmount);
+        // if(walkAmount >= 10000) {
+        //     document.write("<p class=\"good\"굳~!</p>");
+        // }
+        // console.log(walkAmount, typeof walkAmount);
+    </script>
+    <h3>2)조건문 - if ~ else</h3>
+    <!-- 트루일떄와 폴스일때 실행하는 구문이 각각 존재함. -->
+    <code>
+        <pre>
+            65쪽 참고
+        </pre>
+    </code>
+    <h4>if ~ else문 예제(65쪽)</h4>
+    <script>
+        var num = prompt("좋아하는 숫자?", "0");
+        if(num%2 == 0) {
+            document.write("그거슨 짝수", "<br>")
+        } else {
+            document.write("그거슨 홀수", "<br>")
+        }
+    </script>
+</body>
+</html>
