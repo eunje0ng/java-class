@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if ~ else if</title>
+</head>
+<body>
+    <h1>if ~ else if(68쪽)</h1>
+    <p>정해놓은 모든! 조건을 만족하지 않았을 때 실행되는 코드</p>
+    <code>
+        <pre>
+            기본형 구조 - 68쪽 참고
+        </pre>
+    </code>
+    <h2>예시:69쪽</h2>
+    <script>
+        var mon = prompt("현재 몇 월?", "ex)12")
+        if(mon>=9 && mon<=11) {
+            document.write("가을입니다.", "<br>")
+        } else if(mon>=6 && mon<=8) {
+            document.write("여름입니다.", "<br>")
+        } else if(mon>=3 && mon<=5) {
+            document.write("봄입니다.", "<br>")
+        } else {
+            document.write("겨울입니다.", "<br>")
+        }
+    </script>
+</body>
+</html>
