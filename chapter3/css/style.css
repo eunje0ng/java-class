@@ -113,6 +113,16 @@ a {
 }
 footer {
     background: black;
+    height: 100px;
     color: white;
     margin-top: 50px;
+    padding-top: 30px;
+}
+.footer-wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+.logo2 {
+    float: right;
+    font-size: 1.5rem;
 }
