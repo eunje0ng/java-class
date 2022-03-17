@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택문</title>
+</head>
+<body>
+    <h1>선택문-switch문(72쪽)</h1>
+    <script>
+        //즐겨 사용하는 포털사이트를 질의 응답창을 이용해 물어보고, 일치하는 URL을 리다이렉트
+        var likesite = prompt("즐겨찾는 사이트의 이름은?");
+        if(likeSite.toLocaleLowerCase() === "naver") {
+            likeSite = "네이버"
+        } else if(likeSite.toLocaleLowerCase() === "daum") {
+            likeSite = "다음"
+        } else if(likeSite.toLocaleLowerCase() === "google") {
+            likeSite = "구글";
+        }
+        console.log(likeSite);
+        var targetURL;
+
+        switch(likesite) {
+            case"네이버":targetURL="naver.com";
+            break;
+            case"다음":targetURL="daum.net"
+            break;
+            case"구글":targetURL="google.com"
+            break;
+            default:alert("네이버, 다음, 구글 중에서만 입력하세요.");
+        }
+        
+        if(targetURL) {
+            location.href="http://"+targetURL;
+        } else {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
