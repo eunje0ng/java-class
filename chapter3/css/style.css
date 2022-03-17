@@ -1,0 +1,118 @@
+@charset "utf-8";
+body {
+    font: 16px/1.5 "Nanum Gothic", sans-serif;
+    color: #333;
+}
+.d-none {
+    display: none;
+}
+a {
+    text-decoration: none; color: inherit;
+}
+.header-top {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.top-links {
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+.top-links li {
+    color: darkgrey;
+    font-size: 12px;
+    padding-left: 30px;
+}
+.logo {
+    text-align: center;
+    margin: 30px 0;
+}
+.main-nav {
+    background-color: black;
+    height: 60px;
+}
+#gnb {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+#gnb li {
+    color: white;
+    font-size: large;
+    font-weight: 600;
+    padding-top: 15px;
+}
+.hero {
+    background: url("https://picsum.photos/1920/300") no-repeat center / cover;
+    height: 300px;
+}
+#main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+#main h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 50px 0 30px 0;
+}
+.banner-form {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+}
+.banner {
+    width: 40%;
+}
+.banner img{
+    max-width: 100%;
+}
+.form {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 0 0 0 5%;
+}
+.form label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+.form li {
+    margin: 10px 0;
+}
+#user_id {
+    width: calc(100% - 110px);
+    padding: 10px 0;
+    text-indent: 1rem;
+}
+#user_pw {
+    width: calc(100% - 110px);
+    padding: 10px 0;
+    text-indent: 1rem;
+}
+#go_login {
+    background: black;
+    color: white;
+    border: 0;
+    padding: 10px 20px;
+}
+#login-form li:nth-child(3){
+    display: flex;
+    justify-content: flex-end
+}
+#login-form li:nth-last-child(1){
+    border-top: 1px solid #ccc;
+    padding: 10px 0 0 0;
+    font-size: 12px;
+}
+#login-form li:nth-child(4) {
+    display: flex;
+    justify-content: space-between;
+}
+footer {
+    background: black;
+    color: white;
+    margin-top: 50px;
+}

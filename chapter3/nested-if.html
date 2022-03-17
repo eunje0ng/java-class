@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩if</title>
+</head>
+<body>
+    <h1>중첩if(70쪽)</h1>
+    <p>if구문 안에 또 if구문을 작성하는 규칙, 너무 많으면 오류생길 수도</p>
+    <code>
+        <pre>
+            기본형 구조 - 70쪽 참고
+            if() {
+                if() {
+                    if() {
+                        실행코드1;
+                    } else {
+                        실행코드2;
+                    }
+                } else {
+
+                } else if
+            } 와 같이 복잡해질 수 있음
+        </pre>
+    </code>
+    <h2>예시:70쪽</h2>
+    <script>
+        var admin_id = "easy1004", admin_pw = "112233";
+
+        var user_id = prompt("아이디를 입력하세요.");
+        var user_pw = prompt("비밀번호를 입력하세요.");
+
+        if(admin_id===user_id) {
+            if(admin_pw===user_pw) {
+                alert("관리자님, 환영합니다 \n첫페이지로 이동합니다.");
+                location.href="https://naver.com";
+            }
+        } else {
+            alert("아이디 또는 비밀번호를 확인 후 다시 시도하세요.");
+        }
+    </script>
+</body>
+</html>
