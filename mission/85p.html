@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도전미션85쪽</title>
+    <style>
+        table, td {
+            border: 1px solid #333;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h3>중첩for문 연습</h3>
+    <script>
+        // for(var i=1; i<=3; i++) {
+        //     for(var j=1; j<=5; j++) {
+        //         document.write(i+"행 "+j+"열", "<br>");
+        //     }
+        // }
+        // document.write("진짜 i : "+i, "<br>");
+    </script>
+    <h1>Q2.중첩 for문을 이용하여 출력하세요.</h1>
+    <h3>5행 5열 표를 만들고, 데이터를 1부터 25까지 출력되도록 작성하세요.</h3>
+    <script>
+        var num=1;
+        var t="<table border=\"1\">";
+        for(var i=1; i<=5; i++) {
+            t+="<tr>";
+            for(var j=1; j<=5; j++) {
+                t+="<td>"+num+"</td>";
+                num++;
+            }
+            t+="</tr>";
+        }
+        t+="</table>";
+        document.write(t, "<br>");
+    </script>
+</body>
+</html>
