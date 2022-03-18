@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문:for반복문</title>
+    <style>
+        .red {color: red;}
+        .green {color: green;}
+        .aqua {color: aqua;}
+    </style>
+</head>
+<body>
+    <h1>반복문-for문(78쪽)</h1>
+    <h2>가장 자주쓰는 반복문, 문법은 다른 반복문과 약간 다르지만 코드를 원하는 횟수만큼 실행</h2>
+    <p>for, for~of, for~in 반복문으로 구분할 수 있다.</p>
+    <h3>예시</h3>
+    <script>
+        // var total=0;
+        // for(var i=1; i<=10; i++) {
+        //     total+=i;
+        //     if(i%2==0) {
+        //         document.write("<strong>"+i+"</strong>", "<br>");
+        //     } else {
+        //         document.write("<em>"+i+"</em>", "<br>");
+        //     }
+        // }
+        // document.write("1~10까지의 합 : "+total, "<br>");
+    </script>
+    <h3>79쪽 예제</h3>
+    <p>1부터 100까지 5의 배수일 경우에는 빨강, 7의 배수일 경우에는 초록, 5의 배수이며 7의 배수일 경우에는 아쿠아로 출력하는 예제</p>
+    <script>
+        for(i=1; i<=100; i++) {
+            if(i%5==0 && i%7!=0) {
+                document.write("<p class=\"red\">"+i+"</p>");
+            } else if(i%7==0 && i%5!=0) {
+                document.write("<p class=\"green\">"+i+"</p>");
+            } else if(i%5==0 && i%7==0) {
+                document.write("<p class=\"aqua\">"+i+"</p>");
+            }
+        }
+    </script>
+</body>
+</html>

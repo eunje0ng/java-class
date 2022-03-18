@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문:while반복문</title>
+    <style>
+        .blue {color: blue;}
+        .red {color: red;}
+    </style>
+</head>
+<body>
+    <h1>반복문-while문(74쪽)</h1>
+    <h2>가장 간단하고 쉽지만, 자칫 무한반복에 빠질 수 있으므로 주의를 요하는 반복문</h2>
+    <h3>예시</h3>
+    <script>
+        // var i=1;
+        // var total=0;
+        // while(i<=1000){
+        //     document.write(i, "<br>");
+        //     total += i;
+        //     i++;
+        // }
+        // document.write("1~1000의합 : "+total, "<br>");
+    </script>
+    <h3>75쪽예제</h3>
+    <h4>1부터 30까지의 숫자 중 2의 배수이면서 6의 배수인 숫자만 출력하는 예제</h4>
+    <script>
+        // var i=1;
+        // while(i<=90) {
+        //     if(i%2==0 && i%6==0) {
+        //         document.write(i, "<br>");
+        //     }
+        //     i++;
+        // }
+    </script>
+    <h3>76쪽예제</h3>
+    <h4>20부터 10까지 짝수일 떄는 파랑, 홀수일 떄는 빨강으로 출력하는 예제</h4>
+    <script>
+        // var j=20;
+        // while(j>=10){
+        //     if(j%2==0){
+        //         document.write("<p class=\"blue\">"+j+"</p>");
+        //     }else {
+        //         document.write("<p class=\"red\">"+j+"</p>");
+        //     }
+        //     j--;
+        // }
+    </script>
+    <h1>반복문-do while문(77쪽)</h1>
+    <h2>반복문은 조건식을 비교해서 반복을 수행하지만, do-while문은 조건식이 나중에 위치해서 조건식이 거짓이더라도 한 번은 실행되는 반복분</h2>
+    <h3>예시</h3>
+    <script>
+        var i=10;
+        do {
+            document.write("hello!");
+            i++;
+        } while (i<3)
+    </script>
+</body>
+</html>
