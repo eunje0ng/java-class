@@ -25,25 +25,26 @@
          var tv = {
             model: "Hanul",
             color: "dark blue",
-            price: 1000000,
-            info: function(){ // 객체 내부의 function [메서드]
+            price: 10000000,
+            info: function(){ // 객체 내부의 function 메소드
                 document.write("모델명 : "+this.model+", 색상 "+this.color+", 가격 : "+this.price, "<br>");
             },
             tvOff: function(){
                 document.write("전원이 3초뒤에 꺼집니다", "<br>");
             },
             tvOn: function(){
-                var choice = confirm("셋탑 박스를 켤까요?");
+                var choice = confirm("켤까요?");
                 if(choice) {
-                   document.write("셋탑 박스를 켰습니다.", "<br>");; // setTopBox 객체에 on 메소드 호출
+                   document.write("켰습니다.", "<br>");; // 셋탑박스 객체에 on 메소드 호출
                 }
             }
 
         }; // 객체선언 (리터럴)
 
-        // 객체의 메소드 실행(=호출)
-        tv.info(); // tv 객체에 있는 info 라는 함수를 실행해! (정보를 보여줘!)
-        document.write("우리집 tv의 모델은 "+tv.model+" 입니다.", "<br>");
+        // 객체의 메소드 실행(호출)
+        tv.model="샘송";
+        tv.info(); // tv 객체에 있는 info 라는 함수를 실행
+        document.write("우리집 tv는 "+tv.model+" 입니다.", "<br>");
     </script>
 </body>
 </html>
