@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체&gt;객체</title>
+</head>
+<body>
+    <h1>객체</h1>
+    <h2>객체는 속성과 메소드가 갖는 자료형</h2>
+    <p>예를 들어, tv라는 객체는 tv를 켜다, 끄다의 메소드 / tv의 모델, 제조사, 가격 등의 속성을 갖는다.</p>
+    <h3>객체의 선언과 값의 접근</h3>
+    <script>
+        var arr1=["사과","배","딸기"];
+        document.write("내가 좋아하는 과일은 "+arr1.shift()+"이다.", "<br>");
+
+        // 87쪽 티비라는 객체를 선언해보자
+        // 객체 내부의 function(함수) : 메소드 - 149쪽 참고
+        // 객체 내부의 변수(key)=프로퍼티(property)
+        // 함수는 131쪽 참고
+        // var tv=[]; 배열
+
+         // 객체 생성 및 정의(프로퍼티, 메소드)
+         var tv = {
+            model: "Hanul",
+            color: "dark blue",
+            price: 1000000,
+            info: function(){ // 객체 내부의 function [메서드]
+                document.write("모델명 : "+this.model+", 색상 "+this.color+", 가격 : "+this.price, "<br>");
+            },
+            tvOff: function(){
+                document.write("전원이 3초뒤에 꺼집니다", "<br>");
+            },
+            tvOn: function(){
+                var choice = confirm("셋탑 박스를 켤까요?");
+                if(choice) {
+                   document.write("셋탑 박스를 켰습니다.", "<br>");; // setTopBox 객체에 on 메소드 호출
+                }
+            }
+
+        }; // 객체선언 (리터럴)
+
+        // 객체의 메소드 실행(=호출)
+        tv.info(); // tv 객체에 있는 info 라는 함수를 실행해! (정보를 보여줘!)
+        document.write("우리집 tv의 모델은 "+tv.model+" 입니다.", "<br>");
+    </script>
+</body>
+</html>
