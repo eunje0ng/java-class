@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <h1>객체</h1>
+    <h2>참조값, 값에 의한 차이 (변수와 객체)</h2>
+    <p>수자, 문자, 불린형 등은 프리미티브(원시형) 자료형 객체와 다른점이 있는데 복사할 때 차이를 살펴보자.</p>
+    <script>
+        //call by value : 값 복사
+        var user = "jack";
+        var he = user; // user의 값 복사
+        //결과는, 똑같은 값으로 출력됨
+        user = "peter"; //jack->peter
+        //user=peter, he=jack으로 출력됨
+        console.log("---------------------------------------------------------------------------")
+        //call bty reference : 주소값(메모리에 저장된) 복사
+        var vip = {
+            name: 'mr.hong'
+        }
+        var guest = vip;
+        console.log(vip.name);
+        console.log(guest.name);
+        
+        vip.name = "mr.park";
+        console.log(vip.name);
+        console.log(guest.name);
+        //메모리상의 주소값이 복사되었기 때문에 똑같이 mr.park으로 출력됨
+
+        vip.age = 60; //age라는 key와 60이라는 데이터 추가정의
+        /*아래와 같은 방식
+        var vip = {
+            name: 'mr.hong'
+            age: 60
+        }*/
+        vip["nick name"]="balloon"; //공객이 있는 key, value 정의
+        console.log(vip.name);
+        console.log(vip.age);
+        console.log(vip["nick name"]);
+        console.log(guest.name);
+        console.log(guest.age);
+        console.log(guest["nick name"]);
+        //나중에 데이터를 추가해도 복사함
+
+        for(var key in vip) {
+            console.log(vip[key]); //일반적인 변수 문법
+            console.log(`${key} : ${vip[key]}`) //템플릿 문법 ----> 똑같은 값
+        }
+        for(var item in guest) {
+            console.log(guest[item])
+        }
+    </script>
+</body>
+</html>

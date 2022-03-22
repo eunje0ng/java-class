@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체</title>
+</head>
+<body>
+    <h1>내장객체 90쪽</h1>
+    <p>브라우저의 자바스크립트 엔진에 내장, 필요한 경우 생성해서 사용</p>
+    <script>
+        //1. 90쪽 생성자를 이용한 객체정의 방식
+/*        var tv = new Object(); //새 객체를 만들고 나중에 키와 값을 주입하는 방식
+        tv.model = "smart tv";
+        tv.price = 1777777;
+        tv.inch = "222";
+
+        tv.info = function(){ 
+            console.log(`모델명 : ${this.model}`)
+        }
+*/
+        //2. 91쪽 리터럴방식 객체정의 문법 - 더 간단하구 쉽다. 기능도 똑같음
+/*        var car = {
+            model: "coupe",
+            wheel: 11,
+            made: "german",
+            price: 444444444444,
+
+            info: function(){
+                console.log(`${this.model}`)
+            }
+        }
+*/
+        //91쪽 내장객체 > 날짜객체
+        var my_date=new Date();
+        console.log(my_date);
+        console.log(my_date.getDate());
+        console.log(`${my_date.getMonth()+1}월입니다.`); //월은 0부터 계산하기 때문에
+    </script>
+</body>
+</html>
