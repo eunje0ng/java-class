@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            font: 16px/1,5 "Noto Sans Kr", snas-serif;
+            background: url("https://cdn.pixabay.com/photo/2017/06/11/18/03/big-ben-2393098_960_720.jpg") no-repeat center / cover;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin: 15rem 0 0 0;
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+        .text_shadow {
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.74);
+        }
+        #calendar_text {
+            text-align: center;
+            font-size: 2rem;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text_shadow">calendar</h1>
+    <div id="calendar_text" class="text_shadow">바뀌는곳</div>
+    </div>
+    <script>
+        // var 참조변수명 = 날짜객체 생성자;
+        var myDate = new Date();
+        // console.log(myDate);
+
+        var myYear = myDate.getFullYear();
+        var myMonth = String(myDate.getMonth()+1);
+        myMonth=myMonth.padStart(2,"0"); 
+        //월을 0n으로 만드는 형식 - string으로 지정하고 padStart로 바꿔야함
+        var myDay = myDate.getDate()
+
+        // console.log(`${myYear}. ${myMonth}. ${myDay}`);
+
+        //출력할 곳을 지정해야 함 - id="calendar_text"에 출력할 거임
+        var $calendar = document.querySelector("#calendar_text");
+        // console.dir($calendar);
+        $calendar.innerText = `${myYear} . ${myMonth} . ${myDay}`;
+    </script>
+</body>
+</html>

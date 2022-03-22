@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            font: 16px/1,5 "Maven Pro", "Noto Sans Kr";
+            background: url("https://cdn.pixabay.com/photo/2017/01/16/23/10/snow-leopard-1985510_960_720.jpg") no-repeat center / cover;
+        }
+        h1, h2, #time_text {
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(51, 51, 51, 0.582);
+        }
+        h1 {
+            font-size: 1.25rem;
+            margin-top: 5rem;
+        }
+        .timer-wrap {
+            display: flex;
+            justify-content: center;
+        }
+        #timer-text {
+            font-size: 3rem;
+            padding: 1rem 1.250rem;
+            border: 3px solid white;
+            border-radius: 30px;
+            margin-top: 2rem;
+        }
+        hr {
+            width: 60%;
+            margin: 2rem auto;
+            height: 1px;
+            background: white;
+            border: 0;
+        }
+        .alarm-wrap {
+            width: 40%;
+            margin: 0 auto;
+        }
+        .alarm-wrap label {
+            display: none;
+        }
+        .alarm-wrap input[type=text] {
+            padding: 1rem 0;
+            text-indent: 1rem;
+            margin: .5rem;
+            width: 100%;
+        }
+        #set-alarm {
+            background: black;
+            color: wheat;
+            padding: 1rem;
+            margin: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>날짜객체로 시간, 날짜정보 출력하는 시계 만들기</h1>
+    <div class="timer-wrap">
+        <div id="timer-text">시:분:초</div>
+    </div>
+    <hr>
+    <form id="alarm">
+        <ul class="alarm-wrap">
+            <li>
+                <label for="alarm-hour">시</label>
+                <input type="text" id="alarm-hour" maxlength="2" placeholder="알람설정 '시' 입력">
+            </li>
+            <li>
+                <label for="alarm-min">분</label>
+                <input type="text" id="alarm-min" maxlength="2" placeholder="알람설정 '분' 입력">
+            </li>
+            <li>
+                <input type="submit" id="set-alarm" value="설정">
+            </li>
+        </ul>
+    </form>
+    <script>
+        var myDate=new Date();
+        var mySi=myDate.getHours();
+        var myBun=myDate.getMinutes();
+        var myCho=myDate.getSeconds();
+
+        var targetTag=document.querySelector("#timer-text");
+        //console.dir(targetTag);
+        targetTag.innerHTML=`<strong>${mySi}:${myBun}:${myCho}</strong>`;
+
+        //p.118~121 - setTimeout/setInterval - 시간지정
+    </script>
+</body>
+</html>
