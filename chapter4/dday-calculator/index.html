@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7a40af6e56.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>디데이계산하기</title>
+    <link rel="shortcut icon" href="">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="top-wrap">
+                <h1><i class="fa-solid fa-calendar-day"></i>d-day calculator</h1>
+                <ul class="top-links">
+                    <li><a href="#"><i class="fa-solid fa-house"></i>home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-user-check"></i>join</a></li>
+                    <li><a href="#"><i class="fa-solid fa-signs-post"></i></i></i>sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section id="main">
+        <div class="article-wrap">
+            <article>
+                <h2>d-day계산기</h2>
+                <p>오늘부터 남은 날짜를 계산해드려요.</p>
+                <button id="calc">시작하기</button>
+            </article>
+            <article class="d-none">
+                <h2>d-day계산기</h2>
+                <p>오늘부터 남은 날짜를 계산해드려요.</p>
+                <form id="ddayForm" autocomplete="off">
+                    <ul class="form-list">
+                        <li>
+                            <input type="text" id="userYear" maxlength="4" placeholder="입력하슈">
+                            <label for="userYear">년</label>
+                        </li>
+                        <li>
+                            <input type="text" id="userMonth" maxlength="2" placeholder="입력하슈">
+                            <label for="userMonth">월</label>
+                        </li>
+                        <li>
+                            <input type="text" id="userDate" maxlength="2" placeholder="입력하슈">
+                            <label for="userDate">일</label>
+                        </li>
+                        <li>
+                            <input type="submit" id="dday-calc" value="계산하기">
+                            <input type="submit" id="dday-reset" value="초기화">
+                        </li>
+                    </ul>
+                </form>
+            </article>
+        </div>
+    </section>
+    <script src="script/main.js"></script>
+</body>
+</html>

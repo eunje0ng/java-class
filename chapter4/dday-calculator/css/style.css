@@ -1,0 +1,114 @@
+@charset "uft-8";
+
+html {height: 100vh;}
+body {
+    font: 16px/1.5 "Noto Sans KR", snas-serif;
+    background: url("https://cdn.pixabay.com/photo/2015/01/06/14/28/alarm-clock-590383_960_720.jpg") no-repeat center / cover;
+}
+a, a:link {
+    text-decoration: none;
+    color: inherit;
+}
+.d-none {display: none;}
+/* ==================================================================== */
+.header-top {
+    border-bottom: 1px solid #fff;
+    color: white;
+}
+.top-wrap {
+    max-width: 1100px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+.top-links {
+    display: flex;
+    column-gap: 30px;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 5px #000;
+}
+i {
+    margin-right: 5px;
+}
+/* ==================================================================== */
+.article-wrap {
+    width: 400px;
+    height: 550px;
+    position: absolute;
+    left: 30%;
+    top: 53%;
+    transform:translate(-50%, -50%);
+    z-index: 100;
+}
+article h2, article p {
+    color: white;
+    text-shadow: 3px 3px 7px #000;
+}
+article h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+article p {
+    margin: 0.5rem 0;
+}
+#calc {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.151);
+    color: white;
+    padding: 1rem 1.750rem;
+    border: 2px solid white;
+    border-radius: 0.750rem;
+    font-size: 25px;
+    font-weight: 500;
+}
+/* ==================================================================== */
+.form-list li {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+}
+.form-list label{
+    display: block;
+    flex: 1;
+}
+.form-list input {
+    flex: 4;
+    background: none;
+}
+.form-list li input::placeholder {
+    color: rgb(255, 255, 255);
+}
+#userYear, #userMonth, #userDate {
+    padding: 1rem 0;
+    color: white;
+    text-indent: 1rem;
+    border: 1px;
+}
+#dday-calc, #dday-reset {
+    position: absolute;
+    bottom: 0;
+}
+#dday-calc {
+    background: #000;
+    color: white;
+    border-radius: 30xp;
+    padding: 1rem 0;
+    flex: 120px;
+    border: 2px solid white;
+}
+#dday-reset {
+    background: #000;
+    flex: 120px;
+    color: white;
+    width: 100px;
+    border: 2px solid white;
+    border-radius: 30xp;
+    padding: 1rem 0;
+}
+.form-list li:nth-last-child(1) {
+    justify-content: center;
+    column-gap: 15px;
+}
