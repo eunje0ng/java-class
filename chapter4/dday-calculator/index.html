@@ -11,9 +11,14 @@
     <script src="https://kit.fontawesome.com/7a40af6e56.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>디데이계산하기</title>
-    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="">
 </head>
 <body>
+    <div id="result_pop" class="d-none">
+        <h1>예정일까지</h1>
+        <p id="d_day"></p>
+        <p>남았습니다.</p>
+    </div>
     <header>
         <div class="header-top">
             <div class="top-wrap">
@@ -23,6 +28,9 @@
                     <li><a href="#"><i class="fa-solid fa-user-check"></i>join</a></li>
                     <li><a href="#"><i class="fa-solid fa-signs-post"></i></i></i>sitemap</a></li>
                 </ul>
+                <div id="burger" class="d-none">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -52,7 +60,7 @@
                         </li>
                         <li>
                             <input type="submit" id="ddayCalc" value="계산하기">
-                            <!-- <input type="submit" id="ddayReset" value="초기화"> -->
+                            <input type="reset" id="ddayReset" value="초기화">
                         </li>
                     </ul>
                 </form>

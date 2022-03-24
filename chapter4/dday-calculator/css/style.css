@@ -14,10 +14,12 @@ a, a:link {
 .header-top {
     border-bottom: 1px solid #fff;
     color: white;
+    background-color: rgba(0, 0, 0, 0.534);
+    padding: 1.5rem 0;
 }
 .top-wrap {
     max-width: 1100px;
-    margin: 20px auto;
+    margin: 0px auto;
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
@@ -32,7 +34,7 @@ i {
     margin-right: 5px;
 }
 /* ==================================================================== */
-.article-wrap {
+.article-wrap, #result_pop {
     width: 400px;
     height: 500px;
     position: absolute;
@@ -40,6 +42,10 @@ i {
     top: 53%;
     transform:translate(-50%, -50%);
     z-index: 100;
+}
+#result_pop {
+    background: white;
+    z-index: 1000;
 }
 article h2, article p {
     color: white;
@@ -54,16 +60,17 @@ article p {
     margin: 0.5rem 0;
     margin-bottom: 40px;
 }
-#calc, #ddayCalc, #ddayReset {
+#calc {
     position: absolute;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.151);
+    background: rgba(255, 0, 0, 0.692);
     color: white;
-    padding: 1rem 1.750rem;
+    padding: 0.7rem 1rem;
     border: 2px solid white;
     border-radius: 0.750rem;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 500;
+    margin-bottom: 40px;
 }
 /* ==================================================================== */
 .form-list li {
@@ -99,4 +106,48 @@ article p {
 }
 #ddayCalc, #ddayReset {
     flex: 100px;
+    color: white;
+    padding: 0.7rem 1rem;
+    border: 2px solid white;
+    border-radius: 0.750rem;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 60px;
+}
+
+/* =====================미디어쿼리======================= */
+@media screen and (max-width: 480px) {
+    .top-wrap {
+        max-width: 100%;
+        justify-content: space-between;
+        padding: 0 20px;
+        align-items: center;
+    }
+    #burger {
+        display: inline-block;
+        text-shadow: 0px 0px 5px #000;
+    }
+    .top-links {display: none;}
+    .article-wrap {
+        max-width: 40%;
+        padding: 0 70px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .article-wrap {
+        width: auto;
+        max-width: 50%;
+    }
+    article h2 {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 320px) {
+    .article-wrap {
+        width: auto;
+        max-width: 50%;
+    }
+    article h2 {
+        font-size: 1.5rem;
+    }
 }
