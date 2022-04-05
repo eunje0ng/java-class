@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저객체&gt;open</title>
+</head>
+<body>
+    <h1>BOM</h1>
+    <p>브라우저객체 모델 중 최상위 객체 window에 정의된 메소를 살펴보자.</p>
+    <h2>1) window객체 메소드 .open() vs .close()</h2>
+    <h3>사용예시</h3>
+    <div class="window">
+        버튼을 눌러 팝업창을 열어보세요.
+        <button id="opener">새창열기(팝업)</button>
+    </div>
+    // =====================================================================================
+    <h2>2) .setInterval() vs .clearInterval()</h2>
+    <h3>사용예시</h3>
+    <div id="timer"></div>
+    <button id="stopper">멈추기</button>
+    <script>
+        const windowBOX = document.querySelector(".window");
+        const openBTN = windowBOX.querySelector("#opener");
+        openBTN.onclick = function(){
+            const popWidth = 300;
+            const popHeight = 400;
+            const leftPos = (screen.availWidth - popWidth) / 2;
+            const topPos = (screen.availHeight - popHeight) / 2;
+            window.open("./clock.html","clockPop","width="+popWidth+",height="+popHeight+",left="+leftPos+",top="+topPos+",location=no,status=no,toolbars=no")
+        }
+        // =====================================================================================
+        let i = 0
+        const timer = document.querySelector("#timer")
+        const intervalID = setInterval(function(){
+            i++;
+            timer.innerHTML = `i : ${i}+<br>`;            
+        }, 3000);
+
+        const stopper = document.querySelector("#stopper");
+        stopper.addEventListener("click", function(){
+            clearInterval(intervalID);    
+        })
+    </script>
+</body>
+</html>

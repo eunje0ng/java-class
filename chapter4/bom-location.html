@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location객체</title>
+</head>
+<body>
+    <h1>location객체</h1>
+    <p>현재URL에 대한 정보와 새로고침(reload) 메소드를 제공</p>
+    <form id="form">
+        <label for="urlField">주소</label>
+        <input type="url" id="urlField">
+        <input type="submit" value="입력">
+    </form>
+    <script>
+        const _form = document.querySelector("#form");
+        const _url = document.querySelector("#urlField");
+        _url.focus()
+        _form.addEventListener("submit", handleForm);
+
+        function handleForm(e){
+            e.preventDefault();
+            formValidation();
+            const isNewTab = confirm("새창으루?");
+            if(isNewTab){
+                window.open(_url.value,"");
+            } else {
+                location.href = _url.value
+            }
+        }
+        function formValidation(){
+            if(_url.value == ""){
+                alert("이동할 주소 입력")
+                return false;
+            }
+            if(_url.value.indexOf("http")){
+                alert("http://를 포함해서 작성하세요.")
+                return false;
+            }
+        }
+        
+    </script>
+</body>
+</html>

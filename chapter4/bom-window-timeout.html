@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저객체&gt;timeout</title>
+</head>
+<body>
+    <h1>BOM</h1>
+    <p>브라우저객체 모델 중 최상위 객체 window에 정의된 메소를 살펴보자.</p>
+    <h2>121쪽 timeout 예제</h2>
+    <h3>사용예시</h3>
+    <script>
+        setTimeout(opener, 3000);
+        function opener(){
+        window.open("clock.html", "clockWin", "width=400,height=500,toolbars=no,scrollbars=no,menubar=no")
+        }
+    </script>
+</body>
+</html>

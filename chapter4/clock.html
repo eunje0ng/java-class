@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>시계</title>
+    <title>객체 &gt; 날짜 객체</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,28 +14,31 @@
             height: 100%;
         }
         body {
-            font: 16px/1,5 "Maven Pro", "Noto Sans Kr";
-            background: url("https://cdn.pixabay.com/photo/2017/01/16/23/10/snow-leopard-1985510_960_720.jpg") no-repeat center / cover;
+            font: 16px/1.5 "Maven Pro", "Noto Sans KR";
+            background: url("https://cdn.pixabay.com/photo/2022/03/18/19/09/blue-throat-7077261_960_720.jpg") no-repeat center / cover;
         }
-        h1, h2, #time_text {
+        h1, h2, #timer_text {
             text-align: center;
             color: white;
-            text-shadow: 2px 2px 5px rgba(51, 51, 51, 0.582);
+            text-shadow: 5px 5px 5px rgba(0,0,0,.4)
         }
         h1 {
-            font-size: 1.25rem;
-            margin-top: 5rem;
+            margin : 5rem 0 1rem 0;
+            font-size: 3rem
         }
-        .timer-wrap {
+        h2 {
+            margin: 3rem 0 2rem 0;
+            font-size: 2rem;
+        }
+        .timer_wrap {
             display: flex;
             justify-content: center;
         }
-        #timer-text {
-            font-size: 3rem;
-            padding: 1rem 1.250rem;
-            border: 3px solid white;
+        #timer_text {
+            font-size: 1.250rem;
+            padding: 1rem 2.250rem;
+            border: 2px solid white;
             border-radius: 30px;
-            margin-top: 2rem;
         }
         hr {
             width: 60%;
@@ -45,58 +48,118 @@
             border: 0;
         }
         .alarm-wrap {
-            width: 40%;
-            margin: 0 auto;
+            width: 40%; 
+            margin: 0 auto
         }
         .alarm-wrap label {
             display: none;
         }
-        .alarm-wrap input[type=text] {
+        .alarm-wrap input[type=text] { /* 속성 선택자 */
             padding: 1rem 0;
             text-indent: 1rem;
             margin: .5rem;
             width: 100%;
         }
-        #set-alarm {
-            background: black;
-            color: wheat;
-            padding: 1rem;
-            margin: .5rem;
+        #set_alarm {
+            background: yellowgreen;
+            color: black;
+            padding: .5rem 1.250rem;
+            margin: 1rem;
         }
     </style>
 </head>
 <body>
-    <h1>날짜객체로 시간, 날짜정보 출력하는 시계 만들기</h1>
-    <div class="timer-wrap">
-        <div id="timer-text">시:분:초</div>
+    <h1>알람 설정하기</h1>
+    <h2>날짜/시간 정보출력</h2>
+    <div class="timer_wrap">
+        <div id="timer_text">시:분:초</div>
     </div>
     <hr>
-    <form id="alarm">
+    <form id="alarm_form">
         <ul class="alarm-wrap">
             <li>
-                <label for="alarm-hour">시</label>
-                <input type="text" id="alarm-hour" maxlength="2" placeholder="알람설정 '시' 입력">
+                <label for="alarm_hour">시</label>
+                <input type="text" id="alarm_hour" required maxlength="2" placeholder="알람 설정 시간을 입력하세요">
             </li>
             <li>
-                <label for="alarm-min">분</label>
-                <input type="text" id="alarm-min" maxlength="2" placeholder="알람설정 '분' 입력">
+                <label for="alarm_min">분</label>
+                <input type="text" id="alarm_min" required maxlength="2" placeholder="알람 설정 분을 입력하세요">
             </li>
             <li>
-                <input type="submit" id="set-alarm" value="설정">
+                <label for="alarm_message">분</label>
+                <input type="text" id="alarm_message" placeholder="알람 내용 ex>점심약속 출발">
+            </li>
+            <li>
+                <input type="submit" id="set_alarm" value="설정">
             </li>
         </ul>
     </form>
+    <button id="closePop">창닫기</button>
     <script>
-        var myDate=new Date();
-        var mySi=myDate.getHours();
-        var myBun=myDate.getMinutes();
-        var myCho=myDate.getSeconds();
+        // 출력대상 탐색
+        // document.getElementById("timer_text")
+        const targetTag = document.querySelector("#timer_text");
+        // console.dir(targetTag); ▶ 눌러서 확장!!
+        const intervalID = setInterval(function(){
+            let myDate = new Date();
+            let mySi = myDate.getHours();
+            let myBun = String(myDate.getMinutes()).padStart(2,"0");
+            let myCho = String(myDate.getSeconds()).padStart(2,"0");            
+            targetTag.innerHTML = `<strong>${mySi}:${myBun}:${myCho}</strong>`;
+            return mySi
+        }, 1000)
+        // function timer(){
+        //     targetTag.innerHTML = `<strong>${mySi}:${myBun}:${myCho}</strong>`;
+        // }
+        // vs .innerText : HTML포함 사용 vs text만 사용
 
-        var targetTag=document.querySelector("#timer-text");
-        //console.dir(targetTag);
-        targetTag.innerHTML=`<strong>${mySi}:${myBun}:${myCho}</strong>`;
+        // 알람을 설정하려면??
+        const alarmForm = document.querySelector("#alarm_form");
+        const submitBTN = alarmForm.querySelector("#set_alarm");
 
-        //p.118~121 - setTimeout/setInterval - 시간지정
+        // js event 전파단계 : capture --> target --> bubble
+        //                  [상위->해당]   [대상]    [해당->상위]
+        // .preventDefault()
+        // .stopPropagitaion()
+
+        let alarmHour = document.querySelector("#alarm_hour")
+        let alarmMin = document.querySelector("#alarm_min")
+        let alarmText = document.querySelector("#alarm_message")
+        alarmForm.addEventListener("submit", function(e){
+            e.preventDefault(); // 이벤트 전파 금지
+            saveAlarm(); // 알람을 localStorage에 저장하기
+            alarmCheck(); // 알람이 설정된 경우, 설정된 알람을 체크
+            clearAlarm(); // 저장한 뒤에는 입력필드를 초기화하기
+        });
+        function alarmCheck(){
+            let schedulesList = []
+            if(localStorage.length) {
+                console.log("등록된 알람이 있습니다");                
+                // showAlarm();
+            } else {                
+                console.log("등록된 알람이 없습니다");
+            }          
+        }
+        function saveAlarm(){
+            let schedules = {
+                hours : alarmHour.value, 
+                mins: alarmMin.value, 
+                message : alarmText.value
+            }
+            localStorage.setItem("schedule", JSON.stringify(schedules));
+            
+        }
+        function clearAlarm(){
+            alarmHour.value=alarmMin.value=alarmText.value=""
+        }
+        
+        // p.118~121 
+        // .setTimeout() : 지정시간이 종료되면~
+        // .setInterval() : 매 지정 시간마다 (반복)~
+
+        closePop.onclick=function(){
+            window.close();
+        }
     </script>
 </body>
 </html>
