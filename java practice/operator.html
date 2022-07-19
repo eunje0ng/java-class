@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+    <style>
+        #tb1, #tb1 td {
+            border: 1px solid #333;
+            border-collapse: collapse;
+        }
+        #tb1 td {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>대입연산자(46쪽)</h2>
+    <script>
+        /*
+        var num1 = 10;
+        var num2 = 3;
+        document.write("처음 num1 : "+num1+" / 처음 num2 : "+num2, "<br>")
+        //복잡한 대입연산자
+        num1 += num2;
+        document.write("num1 += num2 연산결과? num1 : "+num1+" / num2 : "+num2, "<br>")
+        
+        num1 -= num2;
+        document.write("num1 -= num2 연산결과? num1 : "+num1+" / num2 : "+num2, "<br>")
+        
+        num1 *= num2;
+        document.write("num1 *= num2 연산결과? num1 : "+num1+" / num2 : "+num2, "<br>")
+        
+        num1 /= num2;
+        document.write("num1 /= num2 연산결과? num1 : "+num1+" / num2 : "+num2, "<br>")
+
+        num1 %= num2;
+        document.write("num1 %= num2 연산결과? num1 : "+num1+" / num2 : "+num2, "<br>")
+        */
+        //복합대입연산자를 이용한 테이블 태그
+        /*
+        var tags = "<table id=\"tb1\">";
+        tags += "<tr>";
+            tags += "<td>1행 1열</td>";
+            tags += "<td>1행 2열</td>";
+            tags += "</tr>";
+            tags += "</table>";
+            console.log(tags);
+            document.write(tags);
+            */
+    </script>
+    <h2>증감연산자(48쪽)</h2>
+    <code>
+        <pre>
+            48쪽 설명
+        </pre>
+    </code>
+    <script>
+        /*
+        var num1 = 10;
+        var num2 = 3;
+        var result;
+        console.log("result상태 : "+result)
+
+        num1++;
+        document.write("num1++ : "+num1, "<br>");
+
+        result = num1++;
+        document.write("result : "+result, "<br>")
+        
+        num1--;
+        document.write("num1-- : "+num1, "<br>");
+        
+        num1++;
+        document.write("num1++ : "+num1, "<br>");
+
+        num1++;
+        document.write("num1++ : "+num1, "<br>");
+        */
+    </script>
+    <h2>비교연산자(49쪽)</h2>
+    <script>
+        // var result = 10 !== '10';
+        // document.write(result, "<br>");
+        /*
+        var k=10, m="10";
+        console.log(k==10);
+        console.log(k=="10");
+        console.log(m==10);
+        console.log(m=="10");
+        console.log(k===10);
+        console.log(k==="10");
+        console.log(m===10);
+        console.log(m==="10");
+        console.log(k==m);
+        console.log(k===m);
+        */
+       /*
+       var a=10, b=20, c=10, f="20", result;
+       result = a < b;
+       console.log(result)
+       result = a > b;
+       console.log(result)
+       result = a = b;
+       console.log(result)
+       result = a >= b;
+       console.log(result)
+
+       result = a != b;
+       console.log("a != b:"+result)
+       result = a !== b;
+       console.log("a !== b:"+result)
+       */
+    </script>
+    <h2>논리연산자(52쪽)</h2>
+    <script>
+        // var a = 10;
+        // var b = 20;
+        // var m = 30;
+        // var n = 40;
+        // var result;
+        
+        // result = a>b || b>=m || m>n;
+        // document.write("a>b || b>=m || m>n:" +result,"<br>")
+        // result = a>b || b>=m || m<=n;
+        // document.write("a>b || b>=m || m<=n:" +result,"<br>")
+        
+        // result = a<b && b<=m && m<n;
+        // document.write("a>b && b>=m && m>n:" +result,"<br>")
+        // result = a<b && b<=m && m>n;
+        // document.write("a>b && b>=m && m<=n:" +result,"<br>")
+
+        // result = !(a>b);
+        // document.write(result, "<br>")
+    </script>
+    <h2>삼항조건연산자(54쪽)</h2>
+    <code>
+        <pre>
+            조건식은? 코드1 : 코드2;
+            ex) 10>5? "10은 5보다 크다 : 10은 5보다 크지 않다";
+            (10>5 || 5>0)? "true일때" : "false일때";
+        </pre>
+    </code>
+    <script>
+        // var a = 10;
+        // var b = 30;
+        // var result = a>b ? document.wrtie("a는 b보다 크다") : document.write("a는 b보다 크지 않다");
+
+        var yourAge = Number(prompt("나이가 어떻게 되세요?", "예) 19세 --> 19"))
+        console.log(yourAge, typeof yourAge);
+        yourAge > 20 ? alert("성인입니다") : alert("성인이 아닙니다");
+    </script>
+</body>
+</html>
